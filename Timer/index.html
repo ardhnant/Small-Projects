@@ -37,6 +37,7 @@
     let minutes = 0;
     let hours = 0;
     let timer = null;
+    let isRunning = false;
 
     const startButton =document.querySelector('#start-btn');
     const resetButton = document.querySelector('#reset-btn');
@@ -51,6 +52,7 @@
 
     function runTimer(){
       seconds++
+      isRunning = true;
 
       if(seconds === 60){
         seconds = 0;
@@ -80,6 +82,7 @@
     function resetTimer(){
       clearInterval(timer);
       timer = null;
+      isRunning = false;
       console.log('Time reset.')
 
        seconds = 0;
@@ -94,7 +97,7 @@
     document.addEventListener("keydown", 
       function(event){
         if (event.key === ' '){
-          if(startButton.style.display === 'inline-block'){
+          if(!isRunning){
             startTimer();
           } else {
             resetTimer()
