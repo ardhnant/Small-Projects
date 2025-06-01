@@ -38,11 +38,13 @@
     let hours = 0;
     let timer = null;
 
-    function updateDisplay(){
+    const startButton =document.querySelector('#start-btn');
+    const resetButton = document.querySelector('#reset-btn');
 
-      let h = String(hours).padStart(2, 0);
-      let m = String(minutes).padStart(2, 0);
-      let s = String(seconds).padStart(2, 0);
+    function updateDisplay(){
+      let h = String(hours).padStart(2, '0');
+      let m = String(minutes).padStart(2, '0');
+      let s = String(seconds).padStart(2, '0');
 
       document.querySelector('.timer').innerText = `${h}:${m}:${s}`;
     }
@@ -63,8 +65,10 @@
     }
 
     function startTimer(){
-      document.querySelector('#start-btn').style.display = 'none';
-      document.querySelector('#reset-btn').style.display = 'inline-block';
+      startButton.style.display = 'none';
+      resetButton.style.display = 'inline-block';
+
+      runTimer();
 
       if (timer === null){
         timer = setInterval(runTimer, 1000);
@@ -76,17 +80,28 @@
     function resetTimer(){
       clearInterval(timer);
       timer = null;
-      console.log('I am god.')
+      console.log('Time reset.')
 
        seconds = 0;
        minutes = 0;
        hours = 0;
 
-      document.querySelector('#start-btn').style.display = 'inline-block';
-      document.querySelector('#reset-btn').style.display = 'none';
+      startButton.style.display = 'inline-block';
+      resetButton.style.display = 'none';
       document.querySelector('.timer').innerText = `00:00:00`;
     }
 
+    document.addEventListener("keydown", 
+      function(event){
+        if (event.key === ' '){
+          if(startButton.style.display === 'inline-block'){
+            startTimer();
+          } else {
+            resetTimer()
+          }
+        }
+      }
+    )
 
 
   </script>
