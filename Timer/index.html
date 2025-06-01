@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+  <style>
+
+    body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: hsl(0, 0%, 15%);
+      color: white;
+      font-size: 60px;
+    }
+    #start-btn, #reset-btn{
+      font-size: 40px;
+      padding: 10px;
+    }
+     #reset-btn{
+      display: none;
+     }
+
+  </style>
+</head>
+<body>
+  <p class="timer">00:00:00</p>
+  <button id="start-btn" onclick="startTimer()">Start</button>
+  <button id="reset-btn" onclick="resetTimer()">Reset</button>
+
+  <script>
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let timer = null;
+
+    function updateDisplay(){
+
+      let h = String(hours).padStart(2, 0);
+      let m = String(minutes).padStart(2, 0);
+      let s = String(seconds).padStart(2, 0);
+
+      document.querySelector('.timer').innerText = `${h}:${m}:${s}`;
+    }
+
+    function runTimer(){
+      seconds++
+
+      if(seconds === 60){
+        seconds = 0;
+        minutes++;
+      }
+      if(minutes === 60){
+        minutes = 0;
+        hours++;
+      }
+
+      updateDisplay();
+    }
+
+    function startTimer(){
+      document.querySelector('#start-btn').style.display = 'none';
+      document.querySelector('#reset-btn').style.display = 'inline-block';
+
+      if (timer === null){
+        timer = setInterval(runTimer, 1000);
+      }
+      
+      console.log("Timer started.")
+    }
+
+    function resetTimer(){
+      clearInterval(timer);
+      timer = null;
+      console.log('I am god.')
+
+       seconds = 0;
+       minutes = 0;
+       hours = 0;
+
+      document.querySelector('#start-btn').style.display = 'inline-block';
+      document.querySelector('#reset-btn').style.display = 'none';
+      document.querySelector('.timer').innerText = `00:00:00`;
+    }
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+// Time variables
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+
+// Interval variable
+let timer = null;
+
+// Update the display
+function updateDisplay() {
+  const h = String(hours).padStart(2, "0");
+  const m = String(minutes).padStart(2, "0");
+  const s = String(seconds).padStart(2, "0");
+
+  document.getElementById("display").textContent = `${h}:${m}:${s}`;
+}
+
+// Main stopwatch logic
+function runTimer() {
+  seconds++;
+
+  if (seconds === 60) {
+    seconds = 0;
+    minutes++;
+  }
+
+  if (minutes === 60) {
+    minutes = 0;
+    hours++;
+  }
+
+  updateDisplay();
+}
+
+// Start the stopwatch
+function startTimer() {
+  if (timer === null) {
+    timer = setInterval(runTimer, 1000); // call runTimer every second
+  }
+}
+
+// Pause the stopwatch
+function pauseTimer() {
+  clearInterval(timer);
+  timer = null;
+}
+
+// Reset everything
+function resetTimer() {
+  clearInterval(timer);
+  timer = null;
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
+  updateDisplay();
+}   -->
