@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>To Do List</title>
+</head>
+<body>
+
+  <div>
+
+    <div class="ramen">
+      <input id="input" placeholder="type your chore.....">
+      <button id="button" onclick="addData()">Add</button>
+    </div>
+
+    <div id="chore" class="ramen">
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+const inputEl = document.querySelector('#input');
+const btn = document.querySelector('#button');
+const chore = document.querySelector('#chore');
+const todoList = [];
+
+function addData(){
+  const value = inputEl.value.trim();
+  todoList.push(value);
+ 
+  const p = document.createElement('p');
+  p.textContent = value;
+  
+  console.log(p);
+
+  const delBtn = document.createElement('button');
+  delBtn.textContent = 'Delete';
+  delBtn.addEventListener('click', () => {
+    chore.removeChild(p);
+    const index = todoList.indexOf(value);
+    todoList.splice(value, 1);
+    console.log(todoList);
+  });
+
+  chore.appendChild(p);
+  p.appendChild(delBtn);
+
+  inputEl.value = ''; 
+  console.log(todoList);  
+}
+
+ -->
