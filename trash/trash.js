@@ -61,6 +61,7 @@
 // }
 
 
+
 //create a game where u user will guess no. through prompt until its right
 
 // const num = Math.round(Math.random()*100);
@@ -77,6 +78,48 @@
 // alert('yay, you guess the right num.');
 
 
-let str = prompt('Enter your full name.');
-let cleaned = str.replaceAll(' ', '').toLowerCase();
-console.log('@' + cleaned + cleaned.length);;
+
+
+//for array lop
+
+// let marks = [1, 2, 3, 4, 5, 6];
+// for (let i = 0; i < marks.length; i++){
+//   console.log(marks[i]);
+// }
+
+
+
+//find average marks of students though array and loop
+
+// const marks = [85, 97, 44, 37, 76, 60];
+// let totalMarks = 0;
+// let i =0;
+// while(i < marks.length){
+//   totalMarks += marks[i]; 
+//   i++;
+// }
+// console.log(i)
+// let averageMarks = totalMarks/(i);
+// console.log(averageMarks);
+
+
+
+// let price = [250, 645, 300, 900, 50];
+// let finalPrice = [];
+// for(let i = price.length - 1; i >= 0; i--){
+//   console.log(price[i])
+//   let price10off = price[i] - price[i]/10
+
+//   finalPrice.push(price10off)
+// }
+// console.log(finalPrice);
+
+
+
+//learning splice now very usefull in arrays
+
+// let companies = ['Bloomberg', 'Microsoft', 'Uber', 'Google', 'IBM', 'Netflix'];
+// companies.slice(0);
+// companies.splice(2, 1, 'Ola');
+// companies.push('Amazon')
+// console.log(companies);
