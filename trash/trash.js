@@ -123,3 +123,71 @@
 // companies.splice(2, 1, 'Ola');
 // companies.push('Amazon')
 // console.log(companies);
+
+
+
+//foreach very usefull
+
+// let arr = [1, 2, 'nahi madarchod', 4, 5]
+// arr.forEach((backd) => {
+//   console.log(`makkan chor ${backd}`);
+// })
+
+//and u can use this too
+
+// let arr = [1, 2, 'nahi madarchod', 4, 5]
+// arr.forEach(function khatna(backd){
+//   console.log(`makkan chor ${backd}`);
+// })
+
+
+
+//wierd ways to use for each 
+//  let arr = [1, 2, 3, 4, 4, 2986, 23659, 89432578965, 623789];
+// const calSquare = num => {
+//     console.log(num*num);
+//   } 
+// arr.forEach(calSquare);
+
+//map method does create new arr while forEach method make the changes in orginal arr
+
+// let doremon = arr.map((num) => {
+//   return num*num*num;
+// })
+
+// console.log(doremon);
+
+
+// another very usefull array method is filter
+
+// let newarr = arr.filter((num) => {
+//   return num %2 === 0;
+// })
+
+// console.log(newarr)
+
+
+// Ques: Filter out no. which are 90+
+
+// let marks = [87, 93, 64, 99, 85, 92];
+// let toppers = marks.filter((num) => {
+//   return num>90;
+// })
+// console.log(toppers);
+
+
+// take a no. from user and create a array from 1 to that no.,, the cal the sum of all the no.,, use reduce methode to find product of all no.
+
+const userInput = Number(prompt('enter a no.'));
+let sum = 0;
+let product = 1;
+let arr = [];
+
+for (let i = 1; i <= userInput; i++){
+  arr.push(i);
+  sum += i;
+  product *= i;
+}
+console.log(arr);
+console.log(sum);
+console.log(product);
