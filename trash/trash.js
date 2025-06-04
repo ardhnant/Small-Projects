@@ -178,16 +178,35 @@
 
 // take a no. from user and create a array from 1 to that no.,, the cal the sum of all the no.,, use reduce methode to find product of all no.
 
-const userInput = Number(prompt('enter a no.'));
-let sum = 0;
-let product = 1;
-let arr = [];
+// const userInput = Number(prompt('enter a no.'));
+// let sum = 0;
+// let product = 1;
+// let arr = [];
 
-for (let i = 1; i <= userInput; i++){
-  arr.push(i);
-  sum += i;
-  product *= i;
-}
-console.log(arr);
-console.log(sum);
-console.log(product);
+// for (let i = 1; i <= userInput; i++){
+//   arr.push(i);
+//   sum += i;
+//   product *= i;
+// }
+// console.log(arr);
+// console.log(sum);
+// console.log(product);
+
+
+// a toggle button which can work as a theme changer 
+const bodyColor = document.querySelector('body');
+const button = document.querySelector('button');
+let isColor = 'white';
+button.addEventListener("click", () => {
+  if( isColor === 'black'){
+    bodyColor.style.backgroundColor = 'white';
+    bodyColor.style.color = 'black';
+    isColor = 'white';
+    console.log('now color is white and bgcolor is black');
+  } else {
+    bodyColor.style.backgroundColor = 'black';
+    bodyColor.style.color = 'white';
+    isColor = 'black'
+    console.log('now color is black and bgcolor is white');
+  }
+});
